@@ -31,8 +31,7 @@ ID=$(aws ec2 run-instances \
   --key-name ${KEYNAME} \
   --instance-type t2.micro \
   --region ${REGION} \
-  --subnet-id ${SUBNETID}\
-  --instance-initiated-shutdown-behavior terminate |\
+  --subnet-id ${SUBNETID} | \
     grep InstanceId | awk -F\" '{print $4}')
 
 # Sleep 5 seconds here. Just to give it time to be created.
@@ -75,8 +74,5 @@ ssh -o ConnectionAttempts=255 \
     -o StrictHostKeyChecking=no \
       docker@$IP -p 49158
 
-# Shutdown the server so it terminates.
-ssh -o StrictHostKeyChecking=no \
-  -i $HOME/.ssh/${KEYNAME}.pem \
-  ec2-user@$IP \
-  -t sudo shutdown 0
+# Since we are done. Go ahead and terminate the instance.
+aws ec2 terminate-instances  --instance-ids $ID
