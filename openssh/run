@@ -1,0 +1,6 @@
+#!/usr/bin/execlineb -P
+fdmove -c 2 1
+foreground { exec /usr/bin/ssh-keygen -A }
+foreground { exec /usr/bin/keyfix }
+exec /usr/bin/sshd -De
+
