@@ -55,13 +55,13 @@ docker run \
 To use the client you can just run it as so to get a shell (or /bin/bash if you prefer)
 
 ```bash
-docker run -ti --rm yantis/archlinux-small-sshd-hpn /bin/zsh
+docker run -ti --rm yantis/archlinux-small-ssh-hpn /bin/zsh
 ```
 
 This example uploads a file to your server.
 
 ```bash
-docker run -ti --rm -v ~/Downloads:/Downloads yantis/archlinux-small-sshd-hpn scp -P 49158 -oNoneEnabled=true -oNoneSwitch=yes /Downloads/alpine-3.1.3-x86_64.iso docker@monster:~/ 
+docker run -ti --rm -v ~/Downloads:/Downloads yantis/archlinux-small-ssh-hpn scp -P 49158 -oNoneEnabled=true -oNoneSwitch=yes /Downloads/alpine-3.1.3-x86_64.iso docker@monster:~/ 
 ```
 
 If you look at the below screenshot I ran three tests. First one is normal, second one is the NONE
