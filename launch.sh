@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ############################################################
 # Copyright (c) 2015 Jonathan Yantis
 # Released under the MIT license
