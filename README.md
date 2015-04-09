@@ -68,3 +68,6 @@ If you look at the below screenshot I ran three tests. First one is normal, seco
 cipher and the third one was normal to show no caching was going on.
 The NONE cipher was twice as fast.
 ![](http://yantis-scripts.s3.amazonaws.com/screenshot_20150408-053726.jpg)
+
+If you have AWS and If this is something you want to play with check out the [launch.sh](https://github.com/yantis/docker-archlinux-ssh-hpn/blob/master/launch.sh)
+script on github. It will create a new AWS ec2 instance, install docker and launch the container then log you in. It should work with the AWS free tier.
