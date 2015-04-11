@@ -8,7 +8,7 @@ FROM yantis/archlinux-small
 MAINTAINER Jonathan Yantis <yantis@yantis.net>
 
 ADD keyfix/keyfix.sh /usr/bin/keyfix
-ADD openssh service/openssh
+ADD openssh /service/openssh
 
 # Update and force a refresh of all package lists even if they appear up to date.
 RUN pacman -Syyu --noconfirm && \
