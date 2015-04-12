@@ -42,10 +42,10 @@ RUN pacman -Syyu --noconfirm && \
     chgrp utmp /var/log/lastlog && \
     chmod 664 /var/log/lastlog && \
 
-    mkdir $HOME/.ssh && \
+    mkdir -p $HOME/.ssh && \
 
     # Add in an.ssh directory for our user.
-    mkdir /home/docker/.ssh && \
+    mkdir -p /home/docker/.ssh && \
     chown docker:users /home/docker/.ssh && \
 
     ##########################################################################
