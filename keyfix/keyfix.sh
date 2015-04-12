@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Ran into a problem with the user docker directory being owned by 
-# root in some instances. I think it is related to issue #1295
-chown -R docker /home/docker
-chgrp -R docker /home/docker
-
 # The concept here is to use authorized keys if the user provided them
 # and if they didn't then allow password access.
 
