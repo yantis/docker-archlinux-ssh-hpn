@@ -25,6 +25,12 @@ SUBNETID=subnet-d260adb7
 REGION=us-west-2
 IMAGEID=ami-e7527ed7
 
+# Exit the script if any statements returns a non true (0) value.
+set -e
+
+# Exit the script on any uninitalized variables.
+set -u
+
 # Create our new instance
 ID=$(aws ec2 run-instances \
   --image-id ${IMAGEID} \
@@ -34,8 +40,8 @@ ID=$(aws ec2 run-instances \
   --subnet-id ${SUBNETID} | \
     grep InstanceId | awk -F\" '{print $4}')
 
-# Sleep 5 seconds here. Just to give it time to be created.
-sleep 5
+# Sleep 10 seconds here. Just to give it time to be created.
+sleep 10
 echo "Instance ID: $ID"
 
 # Query every second until we get our IP.
