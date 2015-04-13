@@ -73,7 +73,7 @@ docker run \
            -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
            -v ~/.ssh/privatekey.pem:/home/docker/.ssh/privatekey.pem:ro \
            -u docker \
-           yantis/archlinux-small-ssh-hpn ssh -X -i /home/docker/.ssh/privatekey.pem docker@yourserver -p 49154 -t xeyes
+           yantis/archlinux-small-ssh-hpn ssh -X -i /home/docker/.ssh/privatekey.pem docker@yourserver -p 49158 -t xeyes
 ```
 
 If you look at the below screenshot I ran three tests. First one is normal, second one is the NONE
