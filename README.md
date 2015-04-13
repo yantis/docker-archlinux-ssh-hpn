@@ -64,6 +64,18 @@ This example uploads a file to your server.
 docker run -ti --rm -v ~/Downloads:/Downloads yantis/archlinux-small-ssh-hpn scp -P 49158 -oNoneEnabled=true -oNoneSwitch=yes /Downloads/alpine-3.1.3-x86_64.iso docker@monster:~/ 
 ```
 
+This example uses a private key to connect to your server and runs xeyes.
+
+```bash
+docker run \
+           -ti \
+           -e DISPLAY \
+           -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+           -v ~/.ssh/privatekey.pem:/home/docker/.ssh/privatekey.pem:ro \
+           -u docker \
+           yantis/archlinux-small-ssh-hpn ssh -X -i /home/docker/.ssh/privatekey.pem docker@yourserver -p 49154 -t xeyes
+```
+
 If you look at the below screenshot I ran three tests. First one is normal, second one is the NONE
 cipher and the third one was normal to show no caching was going on.
 The NONE cipher was twice as fast.
