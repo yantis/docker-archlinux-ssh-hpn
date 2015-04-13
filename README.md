@@ -67,8 +67,11 @@ docker run -ti --rm -v ~/Downloads:/Downloads yantis/archlinux-small-ssh-hpn scp
 This example uses a private key to connect to your server and runs xeyes.
 
 ```bash
+xhost +si:localuser:$(whoami) >/dev/null
+
 docker run \
            -ti \
+           --rm \
            -e DISPLAY \
            -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
            -v ~/.ssh/privatekey.pem:/home/docker/.ssh/privatekey.pem:ro \
