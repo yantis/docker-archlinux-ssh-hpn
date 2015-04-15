@@ -28,7 +28,7 @@ IMAGEID=ami-e7527ed7
 # Exit the script if any statements returns a non true (0) value.
 set -e
 
-# Exit the script on any uninitalized variables.
+# Exit the script on any uninitialized variables.
 set -u
 
 # Create our new instance
