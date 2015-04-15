@@ -22,6 +22,17 @@ ssh user@hostname oNoneEnabled=true -oNoneSwitch=yes
 You can also use one of the multithread ciphers for when a TTY is allocated like:
 ssh user@hostname -oCipher=aes128-ctr
 
+
+### Docker Images Structure
+>[yantis/archlinux-tiny](https://github.com/yantis/docker-archlinux-tiny)
+>>[yantis/archlinux-small](https://github.com/yantis/docker-archlinux-small)
+>>>[yantis/archlinux-small-ssh-hpn](https://github.com/yantis/docker-archlinux-ssh-hpn)
+>>>>[yantis/ssh-hpn-x](https://github.com/yantis/docker-ssh-hpn-x)
+>>>>>[yantis/dynamic-video](https://github.com/yantis/docker-dynamic-video)
+>>>>>>[yantis/virtualgl](https://github.com/yantis/docker-virtualgl)
+>>>>>>>[yantis/wine](https://github.com/yantis/docker-wine)
+
+
 ## Server
 
 The server follows these docker conventions:
