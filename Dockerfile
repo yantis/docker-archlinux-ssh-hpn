@@ -10,8 +10,8 @@ MAINTAINER Jonathan Yantis <yantis@yantis.net>
 ADD keyfix/keyfix.sh /usr/bin/keyfix
 ADD openssh /service/openssh
 
-# Update and force a refresh of all package lists even if they appear up to date.
-RUN pacman -Syyu --noconfirm && \
+# No longer update
+RUN pacman -Syy --noconfirm && \
 
     # Install open ssh
     # RUN pacman --noconfirm -S openssh
@@ -26,7 +26,7 @@ RUN pacman -Syyu --noconfirm && \
     # Allow clients to use the NONE cipher
     # http://www.psc.edu/index.php/hpn-ssh/640
     echo "NoneEnabled=yes" >> /etc/ssh/sshd_config && \
-    pacman --noconfirm -Rs linux-headers openbsd-netcat && \
+    # pacman --noconfirm -Rs linux-headers openbsd-netcat && \
     #### - SSH-HP END #########
 
     # Setup our SSH
